@@ -9,27 +9,6 @@ public class NetworkService {
 
     private static Retrofit mRetrofit;
 
-  /*  private  NetworkService() {
-        if (mRetrofit ==null){
-            mRetrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
-       return mRetrofit;
-    }*/
-
-    /*public static NetworkService getInstance() {
-        if (mInstance == null) {
-            mInstance = new NetworkService();
-        }
-        return mInstance;
-    }*/
-
-    /*public JSONPlaceHolderApi getJSONApi() {
-        return mRetrofit.create(JSONPlaceHolderApi.class);
-    }*/
-
 
     public static Retrofit getRetrofitInstance() {
         if (mRetrofit == null) {
