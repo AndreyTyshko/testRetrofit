@@ -1,7 +1,5 @@
 package com.example.testretrofit;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,13 +7,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-
-
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,11 +34,7 @@ mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-
         final TextView mTextView = findViewById(R.id.textView);
-        //mTextView.setOnClickListener(new View.OnClickListener() {
-        //  @Override
-        //   public void onClick(View v) {
 
         q =  mSpinner.getSelectedItem().toString();
 
@@ -79,6 +71,10 @@ mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                             postResponse.clouds.all
                             +
                             "\n" +
+                            "Wind: " +
+                            postResponse.wind.speed
+                            +
+                            "\n" +
                             "City: " +
                             postResponse.name;
 
@@ -91,13 +87,7 @@ mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onFailure(Call<PostResponse> call, Throwable t) {
                 mTextView.setText(t.getMessage());
             }
-
-
-            //  });
-
-            // }
         });
-
 
     }
 
@@ -106,9 +96,6 @@ mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
     }
 });
-
-
-
 
     }
 }

@@ -2,10 +2,11 @@
     <string name="app_name">testRetrofit</string>
 
     <string-array name="cityNames">
-        <item>Novosibirsk</item>
+        <item>Новосибирск</item>
         <item>Omsk</item>
         <item>Tomsk</item>
         <item>Moscow</item>
+        <item>Старая Русса</item>
     </string-array>
 
 </resources>
