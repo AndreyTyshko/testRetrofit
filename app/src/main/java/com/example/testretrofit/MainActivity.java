@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Spinner mSpinner = findViewById(R.id.spinner2);
+        final ImageView imageView = findViewById(R.id.imageSun);
         final ArrayAdapter<?> adapter =  ArrayAdapter.createFromResource(this, R.array.cityNames, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -80,6 +82,15 @@ mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 
                     mTextView.setText(stringBuilder);
+                   int sun= (int) postResponse.clouds.all;
+
+                   if (sun<= 20 ){
+                       imageView.setImageResource(R.drawable.ic_sunny);
+                   }
+                   if (sun >20 && sun< 80){
+                       imageView.setImageResource(R.drawable.ic_sun_clouds);
+                   }
+                   else imageView.setImageResource(R.drawable.ic_clouds);
                 }
             }
 

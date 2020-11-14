@@ -41,6 +41,14 @@
             />
 
 
+        <ImageView
+            android:id="@+id/imageSun"
+            android:layout_width="100sp"
+            android:layout_height="100sp">
+
+        </ImageView>
+
+
     </LinearLayout>
 
 
