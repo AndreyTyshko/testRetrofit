@@ -84,13 +84,15 @@ mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     mTextView.setText(stringBuilder);
                    int sun= (int) postResponse.clouds.all;
 
-                   if (sun<= 20 ){
+                   if (sun <=20){
                        imageView.setImageResource(R.drawable.ic_sunny);
                    }
-                   if (sun >20 && sun< 80){
+                   if (sun > 20 && sun < 80){
                        imageView.setImageResource(R.drawable.ic_sun_clouds);
                    }
-                   else imageView.setImageResource(R.drawable.ic_clouds);
+                   if (sun >=80) {
+                       imageView.setImageResource(R.drawable.ic_clouds);
+                   }
                 }
             }
 
