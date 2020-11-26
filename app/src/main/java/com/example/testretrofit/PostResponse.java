@@ -86,5 +86,6 @@ public class PostResponse {
         public float lon;
         @SerializedName("lat")
         public float lat;
-    }
+
+}
 
