@@ -1,5 +1,7 @@
 package com.example.testretrofit;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
@@ -50,6 +52,13 @@ public class PostResponse {
     class Rain {
         @SerializedName("3h")
         public float h3;
+
+        @Override
+        public String toString() {
+            return "Rain{" +
+                    "h3=" + h3 +
+                    '}';
+        }
     }
 
     class Wind {
