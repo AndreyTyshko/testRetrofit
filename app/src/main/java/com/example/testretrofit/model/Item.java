@@ -4,6 +4,7 @@ class Item {
     private String city;
     private float temperature;
 
+
     public Item(String city, float temperature) {
         this.city = city;
         this.temperature = temperature;
