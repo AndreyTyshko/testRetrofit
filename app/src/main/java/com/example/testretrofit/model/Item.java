@@ -1,13 +1,21 @@
 package com.example.testretrofit.model;
 
-class Item {
+import android.content.res.Resources;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.testretrofit.R;
+
+class Item  extends AppCompatActivity {
     private String city;
     private float temperature;
 
+    String[] cityList = getResources().getStringArray(R.array.cityNames);
 
     public Item(String city, float temperature) {
         this.city = city;
         this.temperature = temperature;
+
     }
 
     public String getCity() {
@@ -32,6 +40,14 @@ class Item {
                 "city='" + city + '\'' +
                 ", temperature=" + temperature +
                 '}';
+    }
+
+    public String[] getCityList() {
+        return cityList;
+    }
+
+    public void setCityList(String[] cityList) {
+        this.cityList = cityList;
     }
 }
 
