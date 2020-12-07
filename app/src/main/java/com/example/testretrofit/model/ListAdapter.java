@@ -1,6 +1,5 @@
 package com.example.testretrofit.model;
 
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,46 +11,41 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.testretrofit.R;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-//import static androidx.core.graphics.drawable.IconCompat.getResources;
 
-class ListAdapter extends RecyclerView.Adapter {
+class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
+
+    private List<String> items = new ArrayList<>();
+
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_city,parent,false);
+    public ListAdapter.ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_city, parent, false);
         return new ListViewHolder(view);
-
-
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((ListViewHolder) holder).bindView(position);
+    public void onBindViewHolder(@NonNull ListAdapter.ListViewHolder holder, int position) {
+        holder.mTextView.setText(items.get(position));
+    }
+
+    public void setItems(List<String> items) {
+        this.items = items;
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return items.size();
     }
 
-    private class ListViewHolder extends RecyclerView.ViewHolder  {
+    static class ListViewHolder extends RecyclerView.ViewHolder {
 
         private TextView mTextView;
 
-        public  ListViewHolder(View itemView){
+        public ListViewHolder(View itemView) {
             super(itemView);
-            mTextView = (TextView) itemView.findViewById(R.id.cityName);
+            mTextView = itemView.findViewById(R.id.viewholder_cityName);
         }
-            public void bindView (int position){
-
-                //ArrayList<String> myResArrayList = new ArrayList<String>();
-                //Resources res = getResources();
-                List<Integer> myArrayList = Arrays.asList(R.array.cityNames);
-                int pos = myArrayList.get(position);
-                mTextView.setText(myArrayList.get(pos));
-            }
     }
 }
