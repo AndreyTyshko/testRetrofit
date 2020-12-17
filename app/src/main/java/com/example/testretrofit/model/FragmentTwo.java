@@ -44,7 +44,17 @@ public class FragmentTwo extends Fragment {
         recyclerView.setAdapter(listAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        getData("Новосибирск");
+
+        final ArrayList<String> cities = new ArrayList<>();
+        cities.add("Новосибирск");
+        cities.add("Томск");
+        cities.add("Кемерово");
+        cities.add("Новокузнецк");
+        cities.add("Москва");
+        for (String city : cities) {
+            getData(city);
+        }
+
         return view;
     }
 
