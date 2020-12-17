@@ -33,6 +33,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ListAdapter.ListViewHolder holder, int position) {
         holder.mTextView.setText(items.get(position).name);
+        holder.mTextViewTemperature.setText(String.valueOf(items.get(position).main.temp));
     }
 
     public void setItems(ArrayList<PostResponse> items) {
@@ -54,7 +55,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
         public ListViewHolder(View itemView) {
             super(itemView);
             mTextView = itemView.findViewById(R.id.viewholder_cityName);
-
+            mTextViewTemperature = itemView.findViewById(R.id.temperature);
         }
     }
 }
