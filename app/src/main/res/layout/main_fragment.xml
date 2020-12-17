@@ -10,16 +10,16 @@
     <fragment
         android:name="com.example.testretrofit.model.FragmentOne"
         android:id="@+id/fragment_one"
-        android:layout_width="247dp"
-        android:layout_height="113dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         tools:layout="@layout/one_fragment" />
 
 
     <fragment
-        android:name="com.example.testretrofit.model.FragmentTwo"
         android:id="@+id/fragment_two"
-        android:layout_width="247dp"
-        android:layout_height="113dp"
+        android:name="com.example.testretrofit.model.FragmentTwo"
+        android:layout_width="match_parent"
+        android:layout_height="338dp"
         tools:layout="@layout/two_fragment" />
 
 

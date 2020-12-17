@@ -27,14 +27,12 @@ public class MainFragment extends FragmentActivity {
         mFragmentOne = new FragmentOne();
         mFragmentTwo = new FragmentTwo();
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
+       /* FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction =fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.fragment_two, mFragmentTwo);
-        fragmentTransaction.commit();
+        fragmentTransaction.commit();*/
 
-       /* mFragmentTransaction.add(R.id.fragment_one, mFragmentOne);
-        mFragmentTransaction.add(R.id.fragment_two, mFragmentTwo);
-        mFragmentTransaction.commit();*/
+
     }
 
 

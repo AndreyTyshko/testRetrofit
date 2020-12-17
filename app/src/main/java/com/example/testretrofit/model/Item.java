@@ -12,10 +12,13 @@ class Item  extends AppCompatActivity {
 
     String[] cityList = getResources().getStringArray(R.array.cityNames);
 
-    public Item(String city, float temperature) {
+
+
+    public Item(int contentLayoutId, String city, float temperature, String[] cityList) {
+        super(contentLayoutId);
         this.city = city;
         this.temperature = temperature;
-
+        this.cityList = cityList;
     }
 
     public String getCity() {
