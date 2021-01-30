@@ -28,7 +28,7 @@ public class FragmentTwo extends Fragment {
 
     public static String AppId = "4240241801da69bd61e3b433199e86d3";
     public static String units = "metric";
-    public static String q = "Новосибирск";
+  // public static String q = "Новосибирск";
     private ListAdapter listAdapter;
 
 
@@ -46,22 +46,23 @@ public class FragmentTwo extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         final ArrayList<String> cities = new ArrayList<>();
-        cities.add("Новосибирск");
-        cities.add("Томск");
+        cities.add("Novosibirsk");
+        cities.add("Tomsk");
         cities.add("Кемерово");
         cities.add("Новокузнецк");
-        cities.add("Москва");
-        for (String city : cities) {
+
+        for (int i = 0; i < cities.size(); i++) {
+            String city = cities.get(i);
             getData(city);
         }
 
         return view;
     }
 
-    private void getData(String cityName) {
+    private void getData(String city) {
 
         JSONPlaceHolderApi service = NetworkService.getRetrofitInstance().create(JSONPlaceHolderApi.class);
-        Call<PostResponse> call = service.getPostWithID(cityName, AppId, units);
+        Call<PostResponse> call = service.getPostWithID(city, AppId, units);
         call.enqueue(new Callback<PostResponse>() {
             @Override
             public void onResponse(Call<PostResponse> call, Response<PostResponse> response) {
@@ -72,7 +73,6 @@ public class FragmentTwo extends Fragment {
                     listAdapter.setItems(items);
                 }
             }
-
             @Override
             public void onFailure(Call<PostResponse> call, Throwable t) {
 

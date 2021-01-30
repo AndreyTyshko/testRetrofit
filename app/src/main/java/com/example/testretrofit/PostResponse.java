@@ -47,19 +47,19 @@ public class PostResponse {
         public float all;
     }
 
-    class Rain {
+    public class Rain {
         @SerializedName("3h")
-        public float h3;
+        public boolean h3;
 
-        @Override
+      /* @Override
         public String toString() {
             return "Rain{" +
                     "h3=" + h3 +
                     '}';
-        }
+        }*/
     }
 
-    class Wind {
+   public class Wind {
         @SerializedName("speed")
         public float speed;
         @SerializedName("deg")
@@ -79,7 +79,7 @@ public class PostResponse {
         public float temp_max;
     }
 
-    class Sys {
+   public class Sys {
         @SerializedName("country")
         public String country;
         @SerializedName("sunrise")

@@ -13,16 +13,66 @@
 
         <action
             android:id="@+id/action_First3Fragment_to_Second3Fragment"
-            app:destination="@id/Second3Fragment" />
+            app:destination="@id/navigation2" />
     </fragment>
-    <fragment
-        android:id="@+id/Second3Fragment"
-        android:name="com.example.testretrofit.model.Second3Fragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second3">
+    <navigation android:id="@+id/navigation2"
+        app:startDestination="@id/navigation">
+        <navigation
+            android:id="@+id/navigation"
+            app:startDestination="@id/Second3Fragment">
+            <fragment
+                android:id="@+id/Second3Fragment"
+                android:name="com.example.testretrofit.model.Second3Fragment"
+                android:label="@string/second_fragment_label"
+                tools:layout="@layout/fragment_second3">
 
+                <action
+                    android:id="@+id/action_Second3Fragment_to_First3Fragment"
+                    app:destination="@id/First3Fragment" />
+            </fragment>
+        </navigation>
         <action
-            android:id="@+id/action_Second3Fragment_to_First3Fragment"
-            app:destination="@id/First3Fragment" />
+            android:id="@+id/action_navigation2_self"
+            app:destination="@id/navigation2" />
+    </navigation>
+    <fragment
+        android:id="@+id/fragmentTwo"
+        android:name="com.example.testretrofit.model.FragmentTwo"
+        android:label="two_fragment"
+        tools:layout="@layout/two_fragment" >
+        <action
+            android:id="@+id/action_fragmentTwo_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
+    <activity
+        android:id="@+id/mainFragment"
+        android:name="com.example.testretrofit.model.MainFragment"
+        android:label="MainFragment" />
+    <fragment
+        android:id="@+id/fragmentOne"
+        android:name="com.example.testretrofit.model.FragmentOne"
+        android:label="FragmentOne" >
+        <action
+            android:id="@+id/action_fragmentOne_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <navigation android:id="@+id/navigation4"
+        app:startDestination="@id/navigation3">
+        <navigation
+            android:id="@+id/navigation3"
+            app:startDestination="@id/mainActivity">
+            <navigation android:id="@+id/navigation6"
+                app:startDestination="@id/navigation5">
+                <navigation
+                    android:id="@+id/navigation5"
+                    app:startDestination="@id/mainActivity">
+                    <activity
+                        android:id="@+id/mainActivity"
+                        android:name="com.example.testretrofit.MainActivity"
+                        android:label="activity_main"
+                        tools:layout="@layout/activity_main" />
+                </navigation>
+            </navigation>
+        </navigation>
+    </navigation>
 </navigation>
